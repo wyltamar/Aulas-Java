@@ -1,25 +1,47 @@
-package capitulo3;
-
-import javax.swing.JOptionPane;
+package capitulo4;
 
 public class SalarioReajustado {
-	public static void main(String[] args) {
+	
+	private String nome;
+	private double salarioAtual;
+	private double salarioReajustado = 0.0;
+	
+	public SalarioReajustado() {
 		
-		double salario = 0;
-		double salarioReajustado = 0;
-		double reajuste = 0;
-		
-		
-		String salario1 = JOptionPane.showInputDialog("Digite o seu sálario");
-		salario = Double.parseDouble(salario1);
-		
-		String reajuste1 = JOptionPane.showInputDialog("Digite o percentual de reajuste salarial");
-		reajuste = Double.parseDouble(reajuste1);
-		
-		salarioReajustado = salario + (salario * (reajuste/100));
-		
-		JOptionPane.showMessageDialog(null, "Seu salário com reajuste agora é = "+ salarioReajustado);
-		
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getSalarioAtual() {
+		return salarioAtual;
+	}
+
+	public void setSalarioAtual(double salarioAtual) {
+		this.salarioAtual = salarioAtual;
+	}
+
+	public double getSalarioReajustado() {
+		return salarioReajustado;
+	}
+
+	public void setSalarioReajustado(double salarioReajustado) {
+		this.salarioReajustado = salarioReajustado;
+	}
+
+	@Override
+	public String toString() {
+		return "SalarioReajustado [nome=" + nome + ", salarioAtual=" + salarioAtual + ", salarioReajustado="
+				+ salarioReajustado + "]";
+	}
+	
+	public void getReajuste() {
+		this.salarioReajustado = this.salarioAtual + ( getSalarioAtual()* 0.0875);
 	}
 
 }
